@@ -5,20 +5,20 @@ import { projectsData } from '@/data/portfolioData'
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 lg:py-32 bg-white">
+    <section id="projects" className="py-14 lg:py-20 bg-white">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="section-header"
         >
           <h2 className="section-title-en mb-2">{projectsData.titleEn}</h2>
           <h3 className="section-title-zh">{projectsData.title}</h3>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
           {projectsData.projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -26,40 +26,43 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
+              className="bg-[#fafbfc] rounded-2xl overflow-hidden border border-black/[0.03] shadow-sm card-hover"
             >
-              <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#f5f5f7] to-[#e5e5e5] aspect-video mb-6">
+              <div className="aspect-video bg-gradient-to-br from-[#f5f7fa] to-[#e8eaed] relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <i className="fas fa-folder-open text-5xl text-[#c7c7cc] group-hover:scale-110 transition-transform duration-500"></i>
+                  <div className="w-10 h-10 rounded-xl bg-[#0066cc]/[0.06] flex items-center justify-center">
+                    <i className="fas fa-folder-open text-[#0066cc]/40 text-lg"></i>
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <h4 className="text-lg font-semibold text-[#1d1d1f] mb-3 group-hover:text-[#0066cc] transition-colors duration-300">
-                {project.title}
-              </h4>
-              <p className="text-sm text-[#86868b] leading-relaxed mb-4">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag, tagIndex) => (
-                  <span
-                    key={tagIndex}
-                    className="px-3 py-1 bg-[#f5f5f7] text-[#86868b] text-xs rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="p-4 lg:p-5">
+                <h4 className="text-sm font-semibold text-[#1d1d1f] mb-1.5">
+                  {project.title}
+                </h4>
+                <p className="text-xs text-[#86868b] leading-relaxed mb-3">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-2.5 py-1 bg-white text-[#86868b] text-xs rounded-full border border-black/[0.03]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <motion.a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-[#0066cc] hover:text-[#0077ed] transition-colors"
+                  whileHover={{ x: 2 }}
+                >
+                  查看详情
+                  <i className="fas fa-arrow-right text-[10px]"></i>
+                </motion.a>
               </div>
-              <motion.a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-[#0066cc] hover:text-[#0077ed] transition-colors duration-300"
-                whileHover={{ x: 4 }}
-              >
-                查看详情
-                <i className="fas fa-arrow-right text-xs"></i>
-              </motion.a>
             </motion.div>
           ))}
         </div>

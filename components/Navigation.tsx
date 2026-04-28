@@ -15,7 +15,7 @@ export default function Navigation() {
       const sections = ['about', 'career', 'scenes', 'skills', 'projects', 'contact']
       const sectionElements = sections.map((id) => document.getElementById(id))
 
-      const scrollPosition = window.scrollY + 200
+      const scrollPosition = window.scrollY + 150
 
       for (let i = sectionElements.length - 1; i >= 0; i--) {
         const section = sectionElements[i]
@@ -38,17 +38,17 @@ export default function Navigation() {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/80 backdrop-blur-xl shadow-sm border-b border-black/5'
+          ? 'bg-white/90 backdrop-blur-xl shadow-sm border-b border-black/[0.03]'
           : 'bg-transparent'
       }`}
     >
       <div className="section-container">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          <a href="#" className="text-lg font-semibold text-[#1d1d1f] hover:text-[#0066cc] transition-colors">
+        <div className="flex items-center justify-between h-14 lg:h-16">
+          <a href="#" className="text-base font-semibold text-[#1d1d1f] hover:text-[#0066cc] transition-colors">
             {navData.brand}
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navData.links.map((link) => {
               const sectionId = link.href.replace('#', '')
               const isActive = activeSection === sectionId
@@ -62,7 +62,7 @@ export default function Navigation() {
                 >
                   {link.text}
                   <span
-                    className={`absolute -bottom-1 left-0 h-0.5 bg-[#0066cc] transition-all duration-300 ${
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-[#0066cc] transition-all duration-300 rounded-full ${
                       isActive ? 'w-full' : 'w-0 group-hover:w-full'
                     }`}
                   />
@@ -72,7 +72,7 @@ export default function Navigation() {
           </div>
 
           <button className="md:hidden text-[#1d1d1f]">
-            <i className="fas fa-bars text-xl"></i>
+            <i className="fas fa-bars text-lg"></i>
           </button>
         </div>
       </div>

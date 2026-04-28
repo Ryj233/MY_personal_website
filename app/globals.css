@@ -5,17 +5,21 @@
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 
 :root {
-  --color-bg: #fafafa;
-  --color-bg-alt: #f5f5f7;
+  --color-bg: #fafbfc;
+  --color-bg-alt: #f5f7fa;
+  --color-bg-card: #ffffff;
   --color-text: #1d1d1f;
-  --color-text-secondary: #86868b;
+  --color-text-secondary: #6e6e73;
+  --color-text-tertiary: #86868b;
   --color-primary: #0066cc;
   --color-primary-light: #0077ed;
-  --color-card: rgba(255, 255, 255, 0.8);
-  --color-border: rgba(0, 0, 0, 0.06);
-  --radius-lg: 20px;
+  --color-primary-soft: rgba(0, 102, 204, 0.08);
+  --color-border: rgba(0, 0, 0, 0.04);
+  --color-shadow: rgba(0, 0, 0, 0.03);
+  --radius-lg: 16px;
   --radius-md: 12px;
   --radius-sm: 8px;
+  --radius-full: 20px;
 }
 
 * {
@@ -29,42 +33,74 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
-  background-color: var(--color-bg);
+  font-family: var(--font-noto-sans-sc), 'HarmonyOS Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background: linear-gradient(180deg, #fafbfc 0%, #f5f7fa 50%, #ffffff 100%);
+  background-attachment: fixed;
   color: var(--color-text);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
 }
 
 @layer components {
   .section-container {
-    @apply max-w-6xl mx-auto px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-5 lg:px-8;
   }
 
   .card-apple {
-    background: var(--color-card);
+    background: var(--color-bg-card);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 3px var(--color-shadow);
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-[#0066cc] text-white rounded-full font-medium transition-all duration-300;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-[#0066cc] text-white rounded-[20px] font-medium transition-all duration-300;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2);
+    letter-spacing: 0.02em;
   }
 
   .btn-primary:hover {
-    @apply bg-[#0077ed] transform scale-105;
+    @apply bg-[#0077ed] transform -translate-y-0.5;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-white/80 backdrop-blur-xl text-[#0066cc] rounded-full font-medium border border-[#0066cc]/20 transition-all duration-300;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-[#0066cc] rounded-[20px] font-medium border transition-all duration-300;
+    border-color: rgba(0, 102, 204, 0.12);
+    box-shadow: 0 1px 3px var(--color-shadow);
+    letter-spacing: 0.02em;
   }
 
   .btn-secondary:hover {
-    @apply bg-[#0066cc]/5 transform scale-105;
+    @apply bg-[#0066cc]/5 transform -translate-y-0.5;
+    border-color: rgba(0, 102, 204, 0.25);
+  }
+
+  .btn-primary-sm {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-[#0066cc] text-white rounded-[20px] font-medium transition-all duration-300 text-sm;
+    box-shadow: 0 2px 6px rgba(0, 102, 204, 0.18);
+    letter-spacing: 0.02em;
+  }
+
+  .btn-primary-sm:hover {
+    @apply bg-[#0077ed] transform -translate-y-0.5;
+    box-shadow: 0 4px 10px rgba(0, 102, 204, 0.25);
+  }
+
+  .btn-secondary-sm {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-white text-[#0066cc] rounded-[20px] font-medium border transition-all duration-300 text-sm;
+    border-color: rgba(0, 102, 204, 0.12);
+    box-shadow: 0 1px 2px var(--color-shadow);
+    letter-spacing: 0.02em;
+  }
+
+  .btn-secondary-sm:hover {
+    @apply bg-[#0066cc]/5 transform -translate-y-0.5;
+    border-color: rgba(0, 102, 204, 0.25);
   }
 
   .text-gradient {
@@ -72,19 +108,55 @@ body {
   }
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 1px 3px var(--color-shadow);
   }
 
   .section-title-zh {
-    @apply text-3xl lg:text-4xl font-bold text-[#1d1d1f] tracking-tight;
+    @apply text-2xl lg:text-3xl font-bold text-[#1d1d1f];
+    line-height: 1.35;
+    letter-spacing: -0.01em;
   }
 
   .section-title-en {
-    @apply text-sm font-medium text-[#0066cc] tracking-widest uppercase;
+    @apply text-xs font-medium text-[#0066cc] uppercase;
+    letter-spacing: 0.18em;
+    font-family: var(--font-inter), var(--font-manrope), sans-serif;
+  }
+
+  .section-header {
+    @apply text-center mb-10 lg:mb-12;
+  }
+
+  .tag-item {
+    @apply px-4 py-1.5 bg-[#f5f7fa] text-[#6e6e73] text-xs rounded-full border border-transparent transition-all duration-300;
+    letter-spacing: 0.02em;
+  }
+
+  .tag-item:hover {
+    @apply border-[#0066cc]/15 text-[#0066cc] bg-[#0066cc]/5;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  .badge-item {
+    @apply px-3 py-1.5 bg-white/80 text-[#6e6e73] text-xs rounded-full border border-black/5 transition-all duration-300;
+    letter-spacing: 0.01em;
+  }
+
+  .badge-item:hover {
+    @apply border-[#0066cc]/15 text-[#0066cc];
   }
 }
 
@@ -94,12 +166,26 @@ body {
   }
 
   .hover-lift:hover {
-    @apply -translate-y-1 shadow-lg;
+    @apply -translate-y-0.5 shadow-md;
   }
-}
 
-@layer utilities {
   .font-cn {
-    font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+    font-family: var(--font-noto-sans-sc), 'HarmonyOS Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  }
+
+  .font-en {
+    font-family: var(--font-inter), var(--font-manrope), 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  .text-tertiary {
+    color: var(--color-text-tertiary);
   }
 }
