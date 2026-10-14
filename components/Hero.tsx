@@ -81,8 +81,8 @@ export default function Hero() {
                 <motion.a
                   key={index}
                   href={btn.href}
-                  download={btn.download}
-                  className={btn.download ? 'btn-secondary-sm' : 'btn-primary-sm'}
+                  {...('download' in btn && btn.download ? { download: true } : {})}
+                  className={'download' in btn && btn.download ? 'btn-secondary-sm' : 'btn-primary-sm'}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}

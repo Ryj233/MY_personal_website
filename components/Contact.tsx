@@ -53,16 +53,6 @@ export default function Contact() {
               <i className="fab fa-github mr-2 text-sm"></i>
               GitHub
             </motion.a>
-            <motion.a
-              href={contactData.cvUrl}
-              download
-              className="btn-secondary"
-              whileHover={{ y: -1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <i className="fas fa-download mr-2 text-sm"></i>
-              下载简历
-            </motion.a>
           </div>
 
           <div className="mt-12 pt-8 border-t border-black/[0.03]">
