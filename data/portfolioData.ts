@@ -79,12 +79,12 @@ export const workScenesData = {
   title: '专业工作场景',
   titleEn: 'Work Scenes',
   images: [
-    { id: 1, src: '/assets/images/work-scene-01.webp', title: '实车测试', tag: 'Vehicle Testing' },
-    { id: 2, src: '/assets/images/work-scene-02.webp', title: '台架调试', tag: 'Bench Debugging' },
-    { id: 3, src: '/assets/images/work-scene-03.webp', title: '策略开发', tag: 'Strategy Dev' },
-    { id: 4, src: '/assets/images/work-scene-04.webp', title: '数据分析', tag: 'Data Analysis' },
-    { id: 5, src: '/assets/images/work-scene-05.webp', title: '团队协作', tag: 'Teamwork' },
-    { id: 6, src: '/assets/images/work-scene-06.webp', title: '技术分享', tag: 'Tech Sharing' }
+    { id: 1, src: '/assets/images/scene-strategy.png', title: '策略设计与优化', tag: 'Strategy Design' },
+    { id: 2, src: '/assets/images/scene-dev.png', title: '软件开发', tag: 'Software Dev' },
+    { id: 3, src: '/assets/images/scene-vehicle-test.png', title: '实车调试', tag: 'Vehicle Debug' },
+    { id: 4, src: '/assets/images/scene-data-analysis.png', title: '问题分析', tag: 'Problem Analysis' },
+    { id: 5, src: '/assets/images/scene-teamwork.png', title: '团队协作', tag: 'Teamwork' },
+    { id: 6, src: '/assets/images/scene-report.png', title: '方案总结与汇报', tag: 'Solution Report' }
   ]
 }
 
