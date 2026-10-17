@@ -29,12 +29,20 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: index * 0.06 }}
               className="bg-[#fafbfc] rounded-2xl overflow-hidden border border-black/[0.03] shadow-sm card-hover"
             >
-              <div className="aspect-video bg-gradient-to-br from-[#f5f7fa] to-[#e8eaed] relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-10 h-10 rounded-xl bg-[#0066cc]/[0.06] flex items-center justify-center">
-                    <i className="fas fa-folder-open text-[#0066cc]/40 text-lg"></i>
+              <div className="aspect-video bg-gradient-to-br from-[#f5f7fa] to-[#e8eaed] relative overflow-hidden">
+                {project.cover ? (
+                  <img
+                    src={project.cover}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-[#0066cc]/[0.06] flex items-center justify-center">
+                      <i className="fas fa-folder-open text-[#0066cc]/40 text-lg"></i>
+                    </div>
                   </div>
-                </div>
+                )}
                 {project.placeholder && (
                   <span className="absolute top-3 right-3 px-2 py-0.5 bg-[#ff9500]/10 text-[#ff9500] text-[10px] font-medium rounded-full">
                     待更新

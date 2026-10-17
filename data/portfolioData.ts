@@ -147,9 +147,60 @@ export const projectsData = {
     {
       id: 4,
       title: '直线加速策略设计及功能开发',
+      subtitle: '直线加速模式动力控制功能开发｜参与开发',
       description: '参与直线加速功能策略讨论，负责功能控制器间交互逻辑、热管理策略、整车动力协调、扭矩请求等策略开发，完成四驱动车型直线加速功能策略扭矩管理开发，应用于海狮系列车型。',
-      tags: ['直线加速', '扭矩策略', '四驱动'],
-      slug: 'straight-line-acceleration'
+      tags: ['直线加速', '扭矩策略', '四驱动', '热管理协同'],
+      slug: 'straight-line-acceleration',
+      cover: '/assets/images/cover-launch-control.png',
+      sections: [
+        {
+          type: 'heading',
+          text: '项目背景'
+        },
+        {
+          type: 'text',
+          body: '直线加速模式为应用于高附直线路面的专项性能模式。该模式下会协同热管理系统对整车性能进行预调节，将整车动力调整至最强，同时维持电机、电控等关键部件处于安全工作温度区间，确保用户可体验极致动力性。'
+        },
+        {
+          type: 'heading',
+          text: '个人参与'
+        },
+        {
+          type: 'bullets',
+          items: [
+            '参与直线加速模式策略设计讨论，面向高附直线路面场景',
+            '负责动力域控制器侧软件开发，实现功能使能、激活及堵转状态机切换',
+            '完成堵转扭矩计算与扭矩仲裁逻辑开发，支撑多执行器协同输出',
+            '参与功能调试过程中的问题排查与解决，支撑功能策略落地与验证闭环'
+          ]
+        },
+        {
+          type: 'heading',
+          text: '策略架构'
+        },
+        {
+          type: 'text',
+          body: '策略层面覆盖整车预调节、功能使能激活、堵转状态机三大阶段，扭矩输出与热管理协同联动，在动力性与安全性之间取得平衡。'
+        },
+        {
+          type: 'image',
+          src: '/assets/images/launch-strategy.png',
+          caption: '直线加速模式整车策略架构'
+        },
+        {
+          type: 'heading',
+          text: '堵转状态机'
+        },
+        {
+          type: 'text',
+          body: '堵转状态机是直线加速功能的核心控制逻辑，管理功能从预激活 → 激活 → 堵转 → 释放 → 退出的完整生命周期，确保扭矩输出在各阶段平滑过渡、无突变冲击。'
+        },
+        {
+          type: 'image',
+          src: '/assets/images/launch-stall-state.png',
+          caption: '直线加速堵转状态机切换逻辑'
+        }
+      ]
     },
     {
       id: 5,
