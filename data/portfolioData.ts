@@ -126,9 +126,65 @@ export const projectsData = {
     {
       id: 1,
       title: '定速巡航四按键复用及兼容方案开发',
+      subtitle: '功能开发｜核心成员',
       description: '完成四按键复用逻辑、新旧按键兼容策略开发，优化巡航扭矩计算与输出逻辑，提升控制平顺性及稳定性，方案应用于元UP、海豚、海鸥、海豹等经济型车型。',
-      tags: ['定速巡航', '按键复用', '平台复用'],
-      slug: 'cruise-button-reuse'
+      tags: ['定速巡航', '按键复用', '扭矩控制', '平台复用', '量产'],
+      slug: 'cruise-button-reuse',
+      cover: '/assets/images/cover-cruise-control.png',
+      sections: [
+        {
+          type: 'heading',
+          text: '项目背景'
+        },
+        {
+          type: 'text',
+          body: '定速巡航按键开关采集驾驶员输入，使汽车在运行中无需维持油门踏板开度便可按照驾驶员要求自动维持匀速行驶。不同方向盘按键方案需要适配不同的软件逻辑，在此背景下新按键方案及兼容方案的软件开发尤为急切。'
+        },
+        {
+          type: 'heading',
+          text: '参与情况'
+        },
+        {
+          type: 'bullets',
+          items: [
+            '完成四按键复用逻辑、新旧按键兼容策略开发，实现不同车型按键方案统一适配',
+            '针对调试中发现的巡航扭矩控制问题，优化目标车速、车辆状态及驾驶员输入等条件下的扭矩计算与输出逻辑',
+            '提升巡航控制平顺性及功能稳定性，完成功能集成、实车调试及量产验证',
+            '方案应用于元UP、海豚、海鸥、海豹等经济型车型，形成平台化复用方案'
+          ]
+        },
+        {
+          type: 'heading',
+          text: '核心策略'
+        },
+        {
+          type: 'image',
+          src: '/assets/images/cruise-calc-logic.png',
+          caption: '定速巡航扭矩计算与输出逻辑'
+        },
+        {
+          type: 'image',
+          src: '/assets/images/cruise-button-logic.png',
+          caption: '四按键复用与兼容切换逻辑'
+        },
+        {
+          type: 'image',
+          src: '/assets/images/cruise-state-logic.png',
+          caption: '定速巡航功能状态切换逻辑'
+        },
+        {
+          type: 'heading',
+          text: '巡航效果示例'
+        },
+        {
+          type: 'bullets',
+          items: [
+            '45km/h 车速稳定过程中最大上冲车速 1.44km/h，车速恢复稳定时间 1.8s，稳定后车速 44.55km/h',
+            '45km/h 车速稳定后实际车速偏移值 0.45km/h，实际车速波动量 0.34km/h',
+            '超越驾驶最大速度恢复时间 7.34s'
+          ]
+        }
+      ]
     },
     {
       id: 2,
