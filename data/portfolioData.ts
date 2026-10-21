@@ -253,6 +253,7 @@ export const projectsData = {
       description: '围绕纯电车型电机响应快、动力平台差异大的特性，针对传统查表限速在急加速、轻载、坡道等工况下的超调与适应性问题开展技术分析，形成分布式驱动自适应限速控制方案及专利布局。',
       tags: ['车速限制', '策略优化', '标准解析', '专利'],
       slug: 'speed-limit-research',
+      cover: '/assets/images/cover-speed-limit.png',
       sections: [
         {
           type: 'heading',
