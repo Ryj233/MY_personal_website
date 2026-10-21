@@ -42,17 +42,6 @@ export default function Contact() {
               <i className="fas fa-envelope mr-2 text-sm"></i>
               邮箱联系
             </motion.a>
-            <motion.a
-              href={contactData.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-              whileHover={{ y: -1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <i className="fab fa-github mr-2 text-sm"></i>
-              GitHub
-            </motion.a>
           </div>
 
           <div className="mt-12 pt-8 border-t border-black/[0.03]">
