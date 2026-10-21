@@ -579,7 +579,6 @@ export const contactData = {
   subtitle: '欢迎交流动力域控制、MBD开发、架构优化、工程效率工具与有价值的合作机会。',
   subtitle2: '也欢迎交流量产经验、扭矩管理策略与长期成长话题。',
   email: '809889124@qq.com',
-  github: 'https://github.com/renyujie',
   cvUrl: '/assets/cv.pdf'
 }
 
