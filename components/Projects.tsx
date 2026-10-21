@@ -43,7 +43,7 @@ export default function Projects() {
                     </div>
                   </div>
                 )}
-                {project.placeholder && (
+                {(project as { placeholder?: boolean }).placeholder && (
                   <span className="absolute top-3 right-3 px-2 py-0.5 bg-[#ff9500]/10 text-[#ff9500] text-[10px] font-medium rounded-full">
                     待更新
                   </span>
