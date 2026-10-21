@@ -417,9 +417,78 @@ export const projectsData = {
     {
       id: 8,
       title: '应用层模型自动化轻量化工具（独立开发）',
-      description: '开发应用层模型自动化拆分、配置文件更新及自动编译脚本，将人工操作时间由约60min缩短至5min，单次处理效率提升约12倍，降低重复劳动及配置错误风险。',
-      tags: ['MATLAB Script', '自动化', '效率提升12x'],
-      slug: 'model-lightweight-tool'
+      subtitle: 'MBD工程化工具｜独立开发',
+      description: '面向 ECU 应用层单元测试流程，独立开发 MATLAB Script 自动化工具链，覆盖模型拆解、配置更新、自动编译、文件汇总及设计说明书批量下载，将人工操作时间由约 60min 缩短至 5min，单次处理效率提升约 12 倍。',
+      tags: ['MATLAB Script', '自动化工具链', '效率提升12x', '独立开发'],
+      slug: 'model-lightweight-tool',
+      cover: '/assets/images/cover-model-lightweight.png',
+      sections: [
+        {
+          type: 'heading',
+          text: '开发背景'
+        },
+        {
+          type: 'text',
+          body: '在汽车电子及嵌入式软件开发中，ECU 应用层单元测试（Flash 测试与运行时间测试）流程涉及大量重复性手工操作，包括从大模型拆解单元、修改配置、编译汇总文件以及下载多版本文档等。这些操作不仅耗时费力，还容易因人为疏忽导致错误，同时多分支版本的文档管理也较为复杂。为提高效率、减少人为差异，开发了该自动化脚本。'
+        },
+        {
+          type: 'heading',
+          text: '单元运行时间测试自动化'
+        },
+        {
+          type: 'bullets',
+          items: [
+            '开发脚本实现一键将大模型中各单元子系统类型修改为原子子系统并命名，替代手动逐个修改的操作',
+            '保存、运行模型及处理代数环问题仍需手动完成，脚本负责核心的类型转换环节'
+          ]
+        },
+        {
+          type: 'heading',
+          text: '单元 Flash 测试的大模型拆解'
+        },
+        {
+          type: 'bullets',
+          items: [
+            '提供两种从大模型拆解单元模型的方式：按模型层级、按 Model Info',
+            '在指定路径下生成拆分后的单元模型文件'
+          ]
+        },
+        {
+          type: 'heading',
+          text: '配置文件处理与更新'
+        },
+        {
+          type: 'bullets',
+          items: [
+            '根据测试资源统计要求修改配置文件',
+            '导出配置 MAT 文件（命名与配置文件保持一致）',
+            '通过选择配置文件对单元模型进行配置更新'
+          ]
+        },
+        {
+          type: 'heading',
+          text: '自动编译与文件汇总'
+        },
+        {
+          type: 'bullets',
+          items: [
+            '选择配置更新后的模型进行自动编译',
+            '自动汇总生成的 .c、.h 文件',
+            '在当前工作空间路径下生成 ert_rtw 及 out 汇总文件夹'
+          ]
+        },
+        {
+          type: 'heading',
+          text: '单元设计说明书批量下载'
+        },
+        {
+          type: 'bullets',
+          items: [
+            '通过选择 Git 本地仓库地址自动生成分支列表',
+            '保留关注分支后，根据列表批量下载各分支最新的单元设计说明书'
+          ]
+        }
+      ]
     },
     {
       id: 9,
